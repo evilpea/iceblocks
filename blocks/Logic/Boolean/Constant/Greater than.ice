@@ -15,10 +15,11 @@
           "id": "ae3e6f64-f1a8-4452-9fd4-207aa3dc6734",
           "type": "basic.input",
           "data": {
-            "name": "in",
+            "name": "",
             "range": "[3:0]",
             "clock": false,
-            "size": 4
+            "size": 4,
+            "virtual": true
           },
           "position": {
             "x": 184,
@@ -29,7 +30,8 @@
           "id": "6649d46e-8d99-4db7-bd39-b2618ffe46d8",
           "type": "basic.output",
           "data": {
-            "name": ""
+            "name": "eq",
+            "virtual": true
           },
           "position": {
             "x": 672,
@@ -53,7 +55,7 @@
           "id": "d57eeafb-5e5a-4d86-8b94-9d0f6adf6f27",
           "type": "basic.code",
           "data": {
-            "code": "assign out = (in > N) ? 1 : 0;",
+            "code": "assign eq = (in > N) ? 1 : 0;",
             "params": [
               {
                 "name": "N"
@@ -69,7 +71,7 @@
               ],
               "out": [
                 {
-                  "name": "out"
+                  "name": "eq"
                 }
               ]
             }
@@ -98,22 +100,22 @@
         },
         {
           "source": {
-            "block": "d57eeafb-5e5a-4d86-8b94-9d0f6adf6f27",
-            "port": "out"
-          },
-          "target": {
-            "block": "6649d46e-8d99-4db7-bd39-b2618ffe46d8",
-            "port": "in"
-          }
-        },
-        {
-          "source": {
             "block": "e55f9ee2-65b4-4a64-a9a1-4970992df93a",
             "port": "constant-out"
           },
           "target": {
             "block": "d57eeafb-5e5a-4d86-8b94-9d0f6adf6f27",
             "port": "N"
+          }
+        },
+        {
+          "source": {
+            "block": "d57eeafb-5e5a-4d86-8b94-9d0f6adf6f27",
+            "port": "eq"
+          },
+          "target": {
+            "block": "6649d46e-8d99-4db7-bd39-b2618ffe46d8",
+            "port": "in"
           }
         }
       ]
