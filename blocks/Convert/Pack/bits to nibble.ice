@@ -3,7 +3,7 @@
   "package": {
     "name": "[ 4 ]",
     "version": "1.0",
-    "description": "Combine 4 bits into a half-byte (nibble)",
+    "description": "Combines 4 bits into a half-byte (nibble)",
     "author": "EvilPea <evilpea3@gmail.com>",
     "image": ""
   },
